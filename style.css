@@ -55,8 +55,8 @@ article:hover {
   transform: scale(1.05);
 }
 
-.me {
-  width: 10%;
+img.me {
+  width: 10vw;
 }
 
 /*# sourceMappingURL=style.css.map */
