@@ -39,16 +39,9 @@ p {
     color: red;
 }
 
-table {
-    table-layout: fixed;
-    width: 100%;
-}
-
-tr {
-}
-
-td {
-    height: 100%
+div.grid {
+    display: flex;
+    justify-content: space-around;
 }
 
 article {
@@ -57,7 +50,11 @@ article {
     border-radius: 1em;
     background-color: ghostwhite;
     box-shadow: 5px 5px 5px 5px dimgrey;
-    height: 100%;
+    width: 40vw;
+    transition: transform 0.5s;
+    &:hover {
+        transform: scale(1.05);
+    }
 }
 
 .me {

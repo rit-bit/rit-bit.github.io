@@ -1,0 +1,62 @@
+* {
+  font-family: Corbel, sans-serif;
+}
+
+body {
+  background-color: lightblue;
+  margin: 2em;
+}
+
+a {
+  color: black;
+  font-weight: bold;
+}
+a:hover {
+  text-decoration: none;
+}
+a:active {
+  color: dimgrey;
+}
+
+h1 {
+  font-family: "Bell MT", serif;
+  background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);
+  padding: 0.5em 1em;
+  text-align: center;
+  border-radius: 1em;
+  box-shadow: 10px 10px 10px dimgrey;
+  font-size: 4rem;
+}
+
+h2 {
+  font-family: monospace;
+  font-size: 2rem;
+}
+
+p {
+  color: red;
+}
+
+div.grid {
+  display: flex;
+  justify-content: space-around;
+}
+
+article {
+  margin: 3em;
+  padding: 1em 3em;
+  border-radius: 1em;
+  background-color: ghostwhite;
+  box-shadow: 5px 5px 5px 5px dimgrey;
+  width: 40vw;
+  transition: transform 0.5s;
+}
+article:hover {
+  transform: scale(1.05);
+}
+
+.me {
+  width: 10%;
+}
+
+/*# sourceMappingURL=style.css.map */
