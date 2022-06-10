@@ -51,12 +51,40 @@ article {
     background-color: ghostwhite;
     box-shadow: 5px 5px 5px 5px dimgrey;
     width: 40vw;
-    transition: transform 0.5s;
+    transition: all 0.5s;
     &:hover {
         transform: scale(1.05);
+        background-color: #e6e6e6;
+        box-shadow: 12px 12px 5px 12px dimgrey;
     }
 }
 
 img.me {
     width: 10vw;
+}
+
+.shiny {
+    color: white;
+    position: relative;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    overflow: hidden;
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: calc(var(--y, 0) * 1px - 50px);
+        left: calc(var(--x, 0) * 1px - 50px);
+        width: 100px;
+        height: 100px;
+        background: radial-gradient(white, transparent 80%);
+
+        opacity: 0;
+        transition: opacity 0.4s;
+    }
+
+    &:hover::after {
+        opacity: 0.4;
+    }
 }
