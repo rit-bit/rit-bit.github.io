@@ -12,9 +12,10 @@ fetch(giphyUrl + new URLSearchParams(params))
     .then((response) => response.json())
     .then((json) => {
         const container = document.getElementById("giphy-container");
-        for (let { url, src } of json.data.map((d) => ({ url: d.url, src: d.images.original.url }))) {
+        for (let { url, src, alt } of json.data.map((d) => ({ url: d.url, src: d.images.original.url, alt: d.title }))) {
             const imgElement = document.createElement("img");
             imgElement.src = src;
+            imgElement.alt = alt;
             imgElement.setAttribute("class", "giphy-image");
 
             const linkElement = document.createElement("a");
@@ -48,11 +49,9 @@ const addKeyPress = (key) => {
     if (recentlyPressedKeys.length > konamiCode.length) {
         recentlyPressedKeys.shift();
     }
-    console.log(recentlyPressedKeys);
 };
 
 const deactivateEasterEgg = () => {
-    console.log("deactivate");
     for (let i = 0; i < images.length; i++) {
         const image = images[i];
         image.setAttribute("class", "giphy-image")
@@ -64,7 +63,6 @@ const activateEasterEgg = () => {
   if (easterEggIsActive) {
       return;
   }
-  console.log("ACTIVATE!");
   easterEggIsActive = true;
   for (let i = 0; i < images.length; i++) {
       const image = images[i];
