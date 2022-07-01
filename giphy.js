@@ -8,10 +8,13 @@ const params = {
 
 const images = [];
 
-fetch(giphyUrl + new URLSearchParams(params))
+const fetchGifs = () => fetch(giphyUrl + new URLSearchParams(params))
     .then((response) => response.json())
     .then((json) => {
         const container = document.getElementById("giphy-container");
+        const loadingGif = document.getElementById("loading-gif");
+        loadingGif.setAttribute("aria-label", "hidden");
+        loadingGif.setAttribute("class", "hidden");
         for (let { url, src, alt } of json.data.map((d) => ({ url: d.url, src: d.images.original.url, alt: d.title }))) {
             const imgElement = document.createElement("img");
             imgElement.src = src;
@@ -27,6 +30,8 @@ fetch(giphyUrl + new URLSearchParams(params))
             container.appendChild(linkElement);
         }
     });
+
+setTimeout(fetchGifs, 500);
 
 const recentlyPressedKeys = [];
 let easterEggIsActive = false;

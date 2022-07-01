@@ -66,7 +66,6 @@ img.me {
   position: relative;
   border: none;
   padding: 10px 15px;
-  cursor: pointer;
   overflow: hidden;
 }
 .shiny::after {
